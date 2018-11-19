@@ -1,0 +1,5 @@
+name: ChestKits
+version: 1.0
+author: ProSavage
+main: net.prosavage.ChestKits
+depends: [Essentials]

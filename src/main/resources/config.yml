@@ -1,0 +1,12 @@
+# ChestKits By ProSavage.
+# Made with love <3.
+# The {kit} placeholder works in every message where it is applicable.
+messages:
+  receive: '&a(!) &7You redeemed the {kit} kit!'
+  on-ground: '&c(!) &7Your inventory is &cfull&7, dropping item on ground.'
+  open: '&a(!) &7Opening {kit} chest...'
+
+item:
+  name: '&e{kit} Kit'
+  lore:
+    - '&a&nRight-Click to redeem the {kit} kit!'
