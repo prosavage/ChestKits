@@ -21,7 +21,7 @@ public class ChestKits extends JavaPlugin {
     @Override
     public void onEnable() {
         logger = getLogger();
-        logger.info("ChestKits - By ProSavage.");
+        logger.info("ChestKits v" + getDescription().getVersion() + " - By ProSavage.");
         instance = this;
         logger.info("Checking Configuration File...");
         if (!checkIfConfigExists()) {
