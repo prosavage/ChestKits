@@ -1,11 +1,11 @@
-package net.prosavage;
+package net.prosavage.savagekits;
 
-import com.earth2me.essentials.*;
-
-import net.prosavage.Util.EssentialsManager;
-import net.prosavage.Util.StringUtil;
-import net.prosavage.Util.itemnbtapi.NBTItem;
-import org.bukkit.Bukkit;
+import com.earth2me.essentials.Kit;
+import com.earth2me.essentials.Kits;
+import com.earth2me.essentials.User;
+import net.prosavage.savagekits.Util.EssentialsManager;
+import net.prosavage.savagekits.Util.StringUtil;
+import net.prosavage.savagekits.Util.itemnbtapi.NBTItem;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -24,7 +24,7 @@ public class CommandInterceptor implements Listener {
     @EventHandler
     public void onKitCommand(PlayerCommandPreprocessEvent event) throws Exception {
         // Check if its a kit command.
-        if (!event.getMessage().toLowerCase().startsWith("/kit")) {
+        if (!ChestKits.getInstance().getConfig().getBoolean("intercept-essentials-kits") || !event.getMessage().toLowerCase().startsWith("/kit")) {
             return;
         }
 
@@ -92,9 +92,6 @@ public class CommandInterceptor implements Listener {
         }
 
     }
-
-
-
 
 
 }

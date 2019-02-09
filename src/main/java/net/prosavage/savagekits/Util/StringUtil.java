@@ -1,4 +1,4 @@
-package net.prosavage.Util;
+package net.prosavage.savagekits.Util;
 
 import org.bukkit.ChatColor;
 

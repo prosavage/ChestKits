@@ -1,4 +1,4 @@
-package net.prosavage.Util;
+package net.prosavage.savagekits.Util;
 
 import com.earth2me.essentials.Essentials;
 import com.earth2me.essentials.User;
