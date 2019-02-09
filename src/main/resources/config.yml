@@ -6,6 +6,8 @@ messages:
   on-ground: '&c(!) &7Your inventory is &cfull&7, dropping item on ground.'
   open: '&a(!) &7Opening {kit} chest...'
 
+intercept-essentials-kits: true
+
 item:
   name: '&e{kit} Kit'
   lore:

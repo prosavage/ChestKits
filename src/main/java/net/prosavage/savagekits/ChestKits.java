@@ -1,28 +1,27 @@
-package net.prosavage;
+package net.prosavage.savagekits;
 
-import com.earth2me.essentials.Essentials;
-import com.earth2me.essentials.User;
-import org.bukkit.Bukkit;
-import org.bukkit.ChatColor;
+import net.prosavage.savagekits.gson.Persist;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.io.File;
-import java.util.*;
 import java.util.logging.Logger;
-
-import static com.earth2me.essentials.I18n.tl;
 
 public class ChestKits extends JavaPlugin {
 
 
     private static ChestKits instance;
     private static Logger logger;
+    private Persist persist;
+
+
 
     @Override
     public void onEnable() {
-        logger = getLogger();
+        logger = this.getLogger();
         logger.info("ChestKits v" + getDescription().getVersion() + " - By ProSavage.");
         instance = this;
+        persist = new Persist();
+        Kits.load();
         logger.info("Checking Configuration File...");
         if (!checkIfConfigExists()) {
             getLogger().info("Configuration file was not found!");
@@ -38,32 +37,25 @@ public class ChestKits extends JavaPlugin {
     }
 
 
-
     @Override
     public void onDisable() {
         logger.info("Disabling ChestKits.");
+        Kits.save();
+        logger.info("Saved Kits");
     }
 
     private boolean checkIfConfigExists() {
         File configFile = new File(getDataFolder(), "config.yml");
-
         return configFile.exists();
+    }
 
+    public Persist getPersist() {
+        return persist;
     }
 
     public static ChestKits getInstance() {
         return instance;
     }
-
-
-
-
-
-
-
-
-
-
 
 
 }

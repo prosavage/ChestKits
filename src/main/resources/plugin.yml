@@ -1,5 +1,9 @@
 name: ChestKits
 version: 1.0
 author: ProSavage
-main: net.prosavage.ChestKits
+main: ChestKits
 depends: [Essentials]
+commands:
+  savagekits:
+    aliases: [skits,skit,savagekit]
+    description: "Main Savage kits command"
