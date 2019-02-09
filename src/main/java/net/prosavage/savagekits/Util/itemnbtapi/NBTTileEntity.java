@@ -1,4 +1,4 @@
-package net.prosavage.Util.itemnbtapi;
+package net.prosavage.savagekits.Util.itemnbtapi;
 
 
 import org.bukkit.block.BlockState;

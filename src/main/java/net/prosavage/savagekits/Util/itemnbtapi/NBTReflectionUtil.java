@@ -1,4 +1,9 @@
-package net.prosavage.Util.itemnbtapi;
+package net.prosavage.savagekits.Util.itemnbtapi;
+
+import net.prosavage.savagekits.Util.itemnbtapi.utils.GsonWrapper;
+import net.prosavage.savagekits.Util.itemnbtapi.utils.MinecraftVersion;
+import org.bukkit.block.BlockState;
+import org.bukkit.entity.Entity;
 
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -8,13 +13,7 @@ import java.util.Set;
 import java.util.Stack;
 
 
-import net.prosavage.Util.itemnbtapi.utils.GsonWrapper;
-import net.prosavage.Util.itemnbtapi.utils.MinecraftVersion;
-import org.bukkit.block.BlockState;
-import org.bukkit.entity.Entity;
-
-
-public class NBTReflectionUtil {  
+public class NBTReflectionUtil {
 
     public static Object getNMSEntity(Entity entity) {
         try {
@@ -63,11 +62,11 @@ public class NBTReflectionUtil {
         @SuppressWarnings("rawtypes")
         Class clazz = ClassWrapper.NMS_ITEMSTACK.getClazz();
         try {
-            if(MinecraftVersion.getVersion().getVersionId() >= MinecraftVersion.MC1_12_R1.getVersionId()){
+            if (MinecraftVersion.getVersion().getVersionId() >= MinecraftVersion.MC1_12_R1.getVersionId()) {
                 Constructor<?> constructor = clazz.getConstructor(ClassWrapper.NMS_NBTTAGCOMPOUND.getClazz());
                 constructor.setAccessible(true);
                 return constructor.newInstance(nbtcompound.getCompound());
-            }else{
+            } else {
                 Method method = clazz.getMethod("createStack", ClassWrapper.NMS_NBTTAGCOMPOUND.getClazz());
                 method.setAccessible(true);
                 return method.invoke(null, nbtcompound.getCompound());

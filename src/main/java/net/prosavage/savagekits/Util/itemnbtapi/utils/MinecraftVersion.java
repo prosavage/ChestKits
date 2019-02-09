@@ -1,4 +1,4 @@
-package net.prosavage.Util.itemnbtapi.utils;
+package net.prosavage.savagekits.Util.itemnbtapi.utils;
 
 import org.bukkit.Bukkit;
 
